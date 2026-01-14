@@ -9,7 +9,8 @@ import authConfig from "./auth.config";
 
 // Public site URL where the Next.js app is hosted.
 // In production, set SITE_URL to your Vercel URL, e.g. https://brick-press.vercel.app
-const siteUrl = process.env.SITE_URL || "http://localhost:3000";
+const rawSiteUrl = process.env.SITE_URL || "http://localhost:3000";
+const siteUrl = rawSiteUrl.endsWith("/") ? rawSiteUrl.slice(0, -1) : rawSiteUrl;
 
 // Derive rpID (WebAuthn relying party ID) from the site URL hostname
 const rpURL = new URL(siteUrl);
