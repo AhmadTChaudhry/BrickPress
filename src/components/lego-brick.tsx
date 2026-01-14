@@ -42,11 +42,10 @@ export function LegoBrick({ color, width = 4, depth = 2, className }: LegoBrickP
                         className={cn("absolute rounded-full shadow-sm", color)}
                         style={{
                             width: unitSize * 0.6,
-                            height: unitSize * 0.6,
+                            height: studHeight, // Visual height in 3D is tricky with CSS, we simulate top cap
                             left: col * unitSize + (unitSize * 0.2),
                             top: row * unitSize + (unitSize * 0.2),
-                            transform: `translateZ(${height}px)`,
-                            height: studHeight, // Visual height in 3D is tricky with CSS, we simulate top cap
+                            transform: `translateZ(${height}px)`
                         }}
                     >
                          {/* Stud Top Cap */}

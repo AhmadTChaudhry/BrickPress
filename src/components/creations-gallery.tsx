@@ -30,7 +30,7 @@ export function CreationsGallery() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {generations.map((gen, index) => (
+                {generations.map((gen: any, index: number) => (
                     <motion.div
                         key={gen._id}
                         initial={{ opacity: 0, y: 20 }}

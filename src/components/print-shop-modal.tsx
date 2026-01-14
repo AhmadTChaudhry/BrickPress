@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog" // Note: Dialog components might not exist, I'll assume standard Shadcn or implement a custom modal
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ProductSelector } from "@/components/product-selector"
