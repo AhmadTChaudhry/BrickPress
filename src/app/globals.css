@@ -1,26 +1,113 @@
 @import "tailwindcss";
+@import "./book.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Lego Inspired Palette */
+  --background: #f8f9fa;
+  /* Clean White/Gray */
+  --foreground: #111111;
+  /* Deep Black */
+
+  --primary: #FFD700;
+  /* Lego Yellow-ish Gold */
+  --primary-foreground: #000000;
+
+  --card: #ffffff;
+  --card-foreground: #111111;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --accent: #E3000B;
+  /* Lego Red */
+  --accent-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #FFD700;
+
+  --radius: 0.75rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #09090b;
+    /* Zinc 950 */
+    --foreground: #fafafa;
+    /* Zinc 50 */
+
+    --primary: #FFD700;
+    --primary-foreground: #000000;
+
+    --card: #18181b;
+    /* Zinc 900 */
+    --card-foreground: #fafafa;
+
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+
+    --accent: #E3000B;
+    --accent-foreground: #ffffff;
+
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #FFD700;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced Focus States */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-x-60 {
+  transform: rotateX(60deg);
+}
+
+.rotate-z-45 {
+  transform: rotateZ(45deg);
 }
